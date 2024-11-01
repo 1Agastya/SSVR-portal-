@@ -44,7 +44,7 @@ public class SplashScreen extends AppCompatActivity {
 
                 // Once the progress reaches 100, start the MainActivity
                 if (progressStatus >= 100) {
-                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                    Intent intent = new Intent(SplashScreen.this, moodoptionlogin.class);
                     startActivity(intent);
                     finish(); // Close the SplashScreen activity
                 }

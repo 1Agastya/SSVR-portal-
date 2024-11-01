@@ -6,8 +6,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -17,7 +20,7 @@ public class Deshboard extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private Toolbar toolbar;
-
+    ImageView aadharview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +29,16 @@ public class Deshboard extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
-
+        View serviceRollerView = getLayoutInflater().inflate(R.layout.service_roller, null);
+        aadharview = serviceRollerView.findViewById(R.id.aadhaardirect);
         setSupportActionBar(toolbar);
-
+     aadharview.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+             Intent aadharintent = new Intent(Deshboard.this,Aadhar.class);
+             startActivity(aadharintent);
+         }
+     });
         // Setup navigation item selection handling
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override

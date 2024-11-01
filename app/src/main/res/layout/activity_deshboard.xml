@@ -29,49 +29,71 @@
                 android:id="@+id/logo"
                 android:layout_gravity="start"
                 android:layout_marginRight="30dp"
-                android:src="@drawable/baseline_navigate_before_24"
-                />
+                android:src="@drawable/baseline_navigate_before_24"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="end"
+
+                android:layout_marginRight="20dp"
+                android:src="@drawable/baseline_account_balance_wallet_24"/>
         </androidx.appcompat.widget.Toolbar>
 
         <!-- Main Content View -->
-        <ScrollView
+        <RelativeLayout
             android:id="@+id/main_content_view"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="#87CEFA"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp">
 
+            android:background="@drawable/cartoon_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <!-- Content in the ScrollView -->
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:background="@color/white"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
 
-                <HorizontalScrollView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="0dp"
-                    android:layout_marginBottom="0dp">
+                    android:orientation="vertical">
 
-                    <View
-                        android:padding="20dp"
-                        android:id="@+id/agent_agenda"
-                        android:layout_width="350dp"
-                        android:layout_height="300dp"
-                        android:background="@color/white" />
+                    <androidx.cardview.widget.CardView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="400dp"
+                        android:layout_height="230dp"
+                        android:layout_gravity="center" />
 
-                </HorizontalScrollView>
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="8dp"
+                        android:text="Book an appointment"
+                        android:textColor="#fb5f33"
+                        android:background="@drawable/circleitem"
+                        android:textSize="30sp" />
+                </LinearLayout>
             </RelativeLayout>
 
 
-        </ScrollView>
+        </RelativeLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginTop="304dp"
+            android:background="@drawable/cartoon_background"
+            app:headerLayout="@layout/service_roller"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/main_content_view">
+
+        </com.google.android.material.navigation.NavigationView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -86,3 +108,4 @@
         android:background="@color/white"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>
+
